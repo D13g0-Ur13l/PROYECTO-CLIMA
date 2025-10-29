@@ -1,0 +1,311 @@
+
+    /* Reseteo básico para todos los elementos */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box; /* Incluye padding y borde en el tamaño */
+    }
+
+    /* Estilo general del cuerpo */
+    body {
+      font-family: 'Roboto', sans-serif; /* Fuente Roboto */
+      background: linear-gradient(135deg, #a8c0ff, #3f2b96); /* Fondo degradado azul */
+      display: flex;
+      justify-content: center; /* Centra horizontalmente */
+      align-items: center; /* Centra verticalmente */
+      min-height: 100vh; /* Altura mínima igual a la ventana */
+    }
+
+    /* Contenedor principal que agrupa toda la app */
+    .contenedor-clima {
+      display: flex; /* Dos columnas: barra lateral y clima */
+      width: 850px; /* Ancho fijo para escritorio */
+      height: 520px; /* Alto fijo para escritorio */
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25); /* Sombra marcada */
+      border-radius: 25px; /* Bordes redondeados */
+      overflow: hidden; /* Oculta contenido que sobresalga */
+      background-color: #f0f4ff; /* Fondo blanco azulado */
+    }
+
+    /* Barra lateral izquierda con título y búsqueda */
+    .barra-lateral {
+      background-color: #4a90e2; /* Azul intenso */
+      flex-basis: 40%; /* Ocupa 40% del ancho */
+      padding: 50px 45px; /* Espacio interno */
+      position: relative; /* Para posicionar elementos absolutos dentro */
+      box-shadow: inset -5px 0 15px rgba(0,0,0,0.1); /* Sombra interna para profundidad */
+    }
+
+    /* Contenedor del título con sol de fondo */
+    .contenedor-titulo {
+      position: relative;
+      width: 220px; /* Ancho fijo para el título */
+    }
+
+    /* Imagen del sol de fondo */
+    .fondo-sol {
+      position: absolute;
+      top: -60px; /* Se mueve hacia arriba */
+      left: -80px; /* Se mueve hacia la izquierda */
+      width: 520px; /* Tamaño ancho */
+      height: 370px; /* Tamaño alto */
+      background-image: url('./IMAGENES/SOL.png'); /* Imagen del sol */
+      background-size: contain; /* Ajusta la imagen dentro del área */
+      background-repeat: no-repeat; /* No se repite */
+      filter: drop-shadow(0 0 10px rgba(255, 223, 0, 0.7)); /* Brillo suave */
+      z-index: 1; /* Detrás del título */
+    }
+
+    /* Título principal */
+    .contenedor-titulo h1 {
+      position: relative;
+      z-index: 5; /* Encima del sol */
+      color: #fff; /* Blanco */
+      font-size: 2.8em; /* Tamaño grande */
+      font-weight: 900; /* Negrita */
+      line-height: 1.1;
+      text-shadow: 3px 3px 8px rgba(0,0,0,0.3); /* Sombra para legibilidad */
+      letter-spacing: 2px; /* Espaciado entre letras */
+    }
+
+    /* Contenedor del formulario de búsqueda */
+    .formulario-busqueda {
+      position: absolute;
+      bottom: 80px; /* Separado del borde inferior */
+      left: 45px;
+      right: 45px;
+      z-index: 20; /* Por encima del sol  */
+    }
+
+    /* Formulario con barra blanca y bordes redondeados */
+    .formulario-busqueda form {
+      display: flex; /* Icono y campo en línea */
+      align-items: center; /* Centra verticalmente */
+      background-color: #fff; /* Fondo blanco */
+      border-radius: 50px; /* Bordes redondeados */
+      padding: 10px 20px; /* Espacio interno */
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* Sombra suave */
+      transition: box-shadow 0.3s ease; /* Transición para hover */
+    }
+
+    /* Sombra más intensa al pasar el mouse */
+    .formulario-busqueda form:hover {
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    }
+
+    /* Icono de ubicación dentro del formulario */
+.icono-ubicacion {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+  opacity: 0.8;
+  position: relative;
+  z-index: 10;
+  flex-shrink: 0;
+}
+
+
+    /* Campo de búsqueda */
+    .formulario-busqueda input {
+      border: none; /* Sin borde */
+      outline: none; /* Sin contorno al enfocar */
+      width: 100%; /* Ocupa todo el espacio */
+      font-size: 1.2em; /* Tamaño de fuente */
+      background: transparent; /* Fondo transparente */
+      font-weight: 500;
+      color: #333; /* Texto oscuro */
+    }
+
+    /* Sección derecha que muestra el clima actual y pronóstico */
+    .mostrar-clima {
+      flex-basis: 60%; /* Ocupa 60% del ancho */
+      display: flex;
+      flex-direction: column; /* Apila verticalmente */
+      background: linear-gradient(135deg, #667eea, #764ba2); /* Degradado morado */
+      box-shadow: inset 5px 0 15px rgba(0,0,0,0.1); /* Sombra interna */
+      padding: 20px 30px; /* Espacio interno */
+      overflow: hidden; /* Evita que contenido sobresalga */
+    }
+
+    /* Clima actual */
+    .clima-actual {
+      flex-grow: 1; /* Ocupa todo el espacio vertical disponible */
+      display: flex;
+      flex-direction: column;
+      justify-content: center; /* Centra verticalmente */
+      align-items: center; /* Centra horizontalmente */
+      color: #fff; /* Texto blanco */
+      padding: 30px 0;
+      text-shadow: 1px 1px 5px rgba(0,0,0,0.5); /* Sombra para legibilidad */
+      min-height: 300px; /* Altura mínima para que no se achique */
+    }
+
+    /* Nombre de la ciudad */
+    .clima-actual h2 {
+      font-size: 2.8em; /* Tamaño grande */
+      font-weight: 900; /* Negrita */
+      margin-bottom: 10px;
+      letter-spacing: 1.5px;
+    }
+
+    /* Fecha y hora */
+    .clima-actual p {
+      font-size: 1.1em;
+      opacity: 0.85;
+      margin-bottom: 25px;
+      font-weight: 600;
+    }
+
+    /* Icono grande del clima */
+    .icono-clima-grande {
+      width: 120px;
+      height: 120px;
+      margin: 25px 0;
+      filter: drop-shadow(0 0 8px rgba(255,255,255,0.7)); /* Brillo */
+    }
+
+    /* Temperatura actual */
+    .temperatura {
+      font-size: 4.5em; /* Muy grande */
+      font-weight: 900;
+      letter-spacing: 2px;
+      white-space: nowrap; /* Evita que se divida en dos líneas */
+    }
+
+    /* Pronóstico por horas */
+    .pronostico {
+      background-color: rgba(0,0,0,0.15); /* Fondo semitransparente */
+      display: flex;
+      justify-content: space-around; /* Espacio uniforme */
+      align-items: center;
+      padding: 25px 0;
+      border-top: 2px solid rgba(255,255,255,0.3); /* Línea superior */
+      flex-wrap: wrap; /* Permite que baje a otra línea en móvil */
+      gap: 15px; /* Espacio entre bloques */
+    }
+
+    /* Cada bloque de hora */
+    .hora-pronostico {
+      text-align: center;
+      color: #fff;
+      font-weight: 700;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+      min-width: 80px; /* Ancho mínimo */
+    }
+
+    /* Hora */
+    .hora-pronostico .hora {
+      font-size: 1.2em;
+      margin-bottom: 12px;
+    }
+
+    /* Icono pequeño del clima */
+    .icono-clima-pequeno {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 12px;
+      filter: drop-shadow(0 0 6px rgba(255,255,255,0.6));
+    }
+
+    /* Temperatura en pronóstico */
+    .hora-pronostico .temperatura {
+      font-size: 1.4em;
+      letter-spacing: 1px;
+    }
+
+    /* --- Responsividad para dispositivos móviles --- */
+    @media (max-width: 768px) {
+      /* Contenedor principal cambia a columna */
+      .contenedor-clima {
+        flex-direction: column;
+        width: 95%;
+        max-width: 420px;
+        height: auto;
+      }
+
+      /* Barra lateral con altura fija menor y menos padding */
+      .barra-lateral {
+        height: 280px;
+        padding: 30px 25px;
+      }
+
+      /* Reducimos tamaño y movemos más arriba el sol para que no tape el buscador */
+      .fondo-sol {
+        top: -90px; /* Más arriba */
+        left: -60px;
+        width: 180px; /* Más pequeño */
+        height: 180px;
+        z-index: 1; /* Detrás */
+      }
+
+      /* Subimos el buscador y le damos z-index alto para que esté encima */
+      .formulario-busqueda {
+        bottom: -20px; /* Más abajo para evitar choque con título */
+        width: 90%; /* Más ancho para que ocupe casi todo el ancho */
+        left: 50%; /* Posición horizontal centrada */
+        right: auto; /* Ignora right para centrar */
+        transform: translateX(-50%); /* Centra el contenedor horizontalmente */
+        z-index: 20; /* Por encima del sol */
+      }
+
+      .formulario-busqueda form {
+        padding: 12px 25px;
+      }
+
+      .formulario-busqueda input {
+        font-size: 1.1em;
+      }
+
+      /* Clima actual con padding ajustado */
+      .clima-actual {
+        padding: 40px 30px;
+      }
+
+      /* Título más pequeño */
+      .contenedor-titulo h1 {
+        font-size: 2.2em;
+      }
+
+      /* Nombre ciudad más pequeño */
+      .clima-actual h2 {
+        font-size: 2.4em;
+      }
+
+      /* Fecha y hora más pequeño */
+      .clima-actual p {
+        font-size: 1em;
+      }
+
+      /* Icono clima grande más pequeño */
+      .icono-clima-grande {
+        width: 100px;
+        height: 100px;
+      }
+
+      /* Temperatura más pequeña */
+      .temperatura {
+        font-size: 3.8em;
+      }
+
+      /* Pronóstico con padding menor y menos espacio */
+      .pronostico {
+        padding: 20px 0;
+        gap: 10px;
+      }
+
+      /* Hora pronóstico más pequeña */
+      .hora-pronostico .hora {
+        font-size: 1.1em;
+      }
+
+      /* Icono clima pequeño más pequeño */
+      .icono-clima-pequeno {
+        width: 50px;
+        height: 50px;
+      }
+
+      /* Temperatura pronóstico más pequeña */
+      .hora-pronostico .temperatura {
+        font-size: 1.2em;
+      }
+    }
