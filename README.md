@@ -1,70 +1,59 @@
-# Getting Started with Create React App
+# Climas Ahora - App del Tiempo
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Una aplicación web del clima desarrollada en React, convertida desde una versión original en HTML, CSS y JavaScript. Muestra el clima actual y pronóstico por horas para varias ciudades, con un diseño responsivo y moderno.
 
-## Available Scripts
+## Características
 
-In the project directory, you can run:
+- **Selección de Ciudad**: Elige entre Cancún, Madrid, Tokio y Nueva York.
+- **Clima Actual**: Muestra temperatura, icono del clima y hora actualizada en tiempo real.
+- **Pronóstico por Horas**: Visualiza el pronóstico para las próximas horas.
+- **Diseño Responsivo**: Adaptable a dispositivos móviles y escritorio.
+- **Interfaz Moderna**: Gradientes, sombras y animaciones suaves.
 
-### `npm start`
+## Tecnologías Utilizadas
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **React**: Framework para la interfaz de usuario.
+- **CSS**: Estilos personalizados con diseño responsivo.
+- **JavaScript**: Lógica para manejo de estado y eventos.
+- **Create React App**: Herramienta para inicializar el proyecto.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Instalación
 
-### `npm test`
+1. **Clona el repositorio**:
+git clone https://github.com/tu-usuario/climas-ahora.git cd climas-ahora
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. **Instala las dependencias**:
+npm install
 
-### `npm run build`
+3. **Inicia el servidor de desarrollo**:
+npm start
+La aplicación se abrirá en `http://localhost:3000`.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Uso
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Selecciona una ciudad en el menú desplegable de la barra lateral.
+- Haz clic en el botón "🔍" para actualizar el clima.
+- La hora se actualiza automáticamente cada segundo.
+- En móvil, el diseño se adapta para una mejor experiencia.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Estructura del Proyecto
+climas-ahora/ ├── public/ │ ├── IMAGENES/ # Imágenes del clima (SOL.png, LLUVIA.png, etc.) │ └── index.html # Archivo HTML base ├── src/ │ ├── App.js # Componente principal │ ├── App.css # Estilos globales │ ├── Sidebar.js # Componente de la barra lateral │ ├── WeatherDisplay.js # Componente de la sección de clima │ └── index.js # Punto de entrada de React ├── package.json # Dependencias y scripts └── README.md # Este archivo
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Contribución
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Este proyecto es para fines escolares. Si deseas contribuir:
+1. Haz un fork del repositorio.
+2. Crea una rama para tu feature (`git checkout -b feature/nueva-funcion`).
+3. Haz commit de tus cambios (`git commit -am 'Agrega nueva función'`).
+4. Push a la rama (`git push origin feature/nueva-funcion`).
+5. Abre un Pull Request.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Licencia
 
-## Learn More
+Este proyecto es de uso educativo y no tiene licencia específica. Siéntete libre de usarlo para aprender.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Autor
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Desarrollado por [Tu Nombre] como proyecto escolar. Basado en una app original en HTML/CSS/JS, convertida a React.
